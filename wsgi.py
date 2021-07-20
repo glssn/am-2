@@ -1,3 +1,3 @@
-from app import app
+from am-2 import create_app
 #
-app = app
+app = create_app()
