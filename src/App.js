@@ -4,8 +4,8 @@ import {
   Box,
   Divider,
   } from "@chakra-ui/react"
-import axios from 'axios';
-import ModalForm from './ModalForm'
+import instance from './axios.setup';
+import ModalForm from "./ModalForm"
 
 class App extends Component {
 
@@ -18,10 +18,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-      axios
-        .get(
-          "http://localhost:5000/users"
-        )
+      instance({
+        url: '/users',
+        method: 'get'
+      })
         .then(res => {
           //console.log("res", res)
           const users = res.data
@@ -31,9 +31,9 @@ class App extends Component {
         .catch(error => {
           console.log((error));
         });
-      axios
+      instance
         .get(
-          "http://localhost:5000/emails"
+          "/emails"
         )
         .then(res => {
           //console.log("res", res)
