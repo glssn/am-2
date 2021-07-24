@@ -69,9 +69,9 @@ class Users extends React.Component {
   return(
     <>
     <Container>
-    <Row className="justify-content-md-center">
-    <Col xs lg="3" />
-    <Col md="8">
+    <Row md={4}>
+    <Col xs lg="3"/>
+    <Col md='6'>
     <div className='UsersList'>
     <h2>Current list of users: </h2>
     <ListGroup>
@@ -93,7 +93,7 @@ class Users extends React.Component {
     <Container>
     <Row className="justify-content-md-center">
     <Col xs lg="3" />
-    <Col md="8">
+    <Col md="6">
       <UserForm />
       </Col>
       <Col xs lg="3" />
