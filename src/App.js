@@ -1,9 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import {
-  Box,
-  Divider,
-  } from "@chakra-ui/react"
+  Container
+} from "react-bootstrap"
 import instance from './axios.setup';
 import ModalForm from "./ModalForm"
 
@@ -24,7 +23,11 @@ class App extends Component {
       })
         .then(res => {
           //console.log("res", res)
-          const users = res.data
+          var users = []
+          res.data.forEach(function(user){
+            users.push(user.fullname)
+          });
+
           //debugger
           this.setState({ users });
         })
@@ -49,17 +52,16 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-            <Box p='4'>
+            <Container p='4'>
             <h2>users in system:</h2>
             <ul dangerouslySetInnerHTML={{__html: this.state.users}}>
             </ul>
-            </Box>
-            <Divider />
-            <Box p='4'>
+            </Container>
+            <Container p='4'>
             <h2>Current emails registered</h2>
             <ul dangerouslySetInnerHTML={{__html: this.state.emails}}>
             </ul>
-            </Box>
+            </Container>
         <ModalForm />
       </div>
     );

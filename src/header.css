@@ -1,28 +1,10 @@
-header {
-  backgroundColor: "#400CCC";
-  paddingRight: "79px";
-  paddingLeft: "118px";
+.my-content .ui.segment{
+  min-height:500px;
+  height:100%;
 }
-
-logo {
-  fontFamily: "Work Sans; sans-serif";
-  fontWeight: 600;
-  color: "#FFFEFE";
-  textAlign: "left";
+.ui.grid{
+  padding:0 !important;
 }
-
-menuButton {
-  fontFamily: "Open Sans; sans-serif";
-  fontWeight: 700;
-  size: "18px";
-  marginLeft: "38px";
-}
-
-toolbar {
-  display: "flex";
-  justifyContent: "space-between";
-}
-
-drawerContainer {
-  padding: "20px 30px";
+.pushable.segment{
+  margin:0 !important;
 }
