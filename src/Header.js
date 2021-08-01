@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar,Nav,Container } from 'react-bootstrap'
+import { Navbar,Nav,Container,Button,Form } from 'react-bootstrap'
 
 class Header extends React.Component {
   render() {
@@ -15,6 +15,10 @@ class Header extends React.Component {
               <Nav.Link href="/allotments">Allotments</Nav.Link>
               <Nav.Link href="/users">Users</Nav.Link>
             </Nav>
+            <Form >
+              <Button href="/login" className="mr-1">Log in</Button>{' '}
+              <Button variant="outline-primary" href="/signup" className="mr-2">Sign up</Button>
+            </Form>
           </Navbar.Collapse>
         </Container>
         </Navbar>
