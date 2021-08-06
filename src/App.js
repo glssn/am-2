@@ -2,6 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import {
   Container,
+  ListGroup,
+  Card
 } from "react-bootstrap"
 import instance from './axios.setup';
 // import ModalForm from "./ModalForm"
@@ -40,7 +42,10 @@ class App extends Component {
         )
         .then(res => {
           //console.log("res", res)
-          const emails = res.data
+          var emails = []
+          res.data.forEach(function(user){
+            emails.push(user.email)
+          });
           //debugger
           this.setState({ emails });
         })
@@ -52,17 +57,36 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-            <Container p='4'>
+            <Container className="d-flex align-items-center justify-content-center">
+            <div className="w-100" style={{
+              maxWidth: "22em"
+            }}>
+            <Card>
             <h2>users in system:</h2>
-            <ul dangerouslySetInnerHTML={{__html: this.state.users}}>
-            </ul>
+            
+            <ListGroup variant="flush">
+              {this.state.users.map(name => {
+                return <ListGroup.Item>{name}</ListGroup.Item>
+              })}
+            </ListGroup>
+          </Card>
+          </div>
             </Container>
-            <Container p='4'>
+            <Container className="d-flex align-items-center justify-content-center">
+              <div className="w-100" style={{
+                  maxWidth:"22em"
+                }}>
+                <Card>
             <h2>Current emails registered</h2>
-            <ul dangerouslySetInnerHTML={{__html: this.state.emails}}>
-            </ul>
+
+            {this.state.emails.map(email => {
+              return <li>{email}</li>
+            })}
+            </Card>
+          </div>
             </Container>
       </div>
+
     );
   }
 }

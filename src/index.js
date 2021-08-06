@@ -12,7 +12,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import PrivateRoute from './components/PrivateRoute'
 import Profile from './components/Profile'
 import reportWebVitals from './reportWebVitals';
-
+import Waitlist from './components/Waitlist'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { ChakraProvider } from "@chakra-ui/react"
@@ -29,7 +29,7 @@ ReactDOM.render(
             <PrivateRoute exact path="/" component={App} />
             <Route path="/allotments" component={Allotments} />
             <Route path="/users" component={Users} />
-            <Route path="/waiting" component={App} />
+            <Route path="/waitlist" component={Waitlist} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/profile" component={Profile} />

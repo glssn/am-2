@@ -5,7 +5,7 @@ import {FaUser} from 'react-icons/fa'
 
 export default function Header() {
   const {currentUser} = useAuth()
-  const username = currentUser ? currentUser.email.substring(0,4) : ''
+  const username = currentUser ? currentUser.email.substring(0,currentUser.email.indexOf('@')) : ''
     return(
       <div>
       <Navbar bg="light" expand="lg">
