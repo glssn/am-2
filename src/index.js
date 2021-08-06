@@ -32,7 +32,7 @@ ReactDOM.render(
             <Route path="/waiting" component={App} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <route path="/profile" component={Profile} />
+            <PrivateRoute path="/profile" component={Profile} />
             <Route component={App} />
           </Switch>
         </div>

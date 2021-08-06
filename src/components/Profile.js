@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Button, Card, Container, Alert } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import { FaUserEdit } from 'react-icons/fa'
+import { BiLogOut } from 'react-icons/bi'
 
 export default function Profile() {
   const [error, setError] = useState('')
-  const {currentUser, logout } = useAuth()
+  const { currentUser, logout } = useAuth()
   const history = useHistory()
 
   async function handleLogout() {
@@ -29,11 +31,11 @@ export default function Profile() {
         <h2>Profile</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <strong>Email:</strong> {currentUser.email}
-        <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update profile</Link>
+        <Link to="/update-profile" className="btn btn-primary w-100 mt-3"><FaUserEdit /> Update profile</Link>
       </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-      <Button variant="link" onClick={handleLogout}>Log out</Button>
+      <Button variant="secondary" onClick={handleLogout}><BiLogOut /> Log out</Button>
       </div>
       </div>
       </Container>

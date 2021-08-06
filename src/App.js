@@ -5,7 +5,6 @@ import {
 } from "react-bootstrap"
 import instance from './axios.setup';
 // import ModalForm from "./ModalForm"
-import Profile from "./components/Profile"
 
 class App extends Component {
 
@@ -63,7 +62,6 @@ class App extends Component {
             <ul dangerouslySetInnerHTML={{__html: this.state.emails}}>
             </ul>
             </Container>
-        <Profile />
       </div>
     );
   }
