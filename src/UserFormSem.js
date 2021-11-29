@@ -29,7 +29,16 @@ const FormExampleFieldError = () => {
          />
          <div className="invalid-feedback">{errors.fullname?.message}</div>
        </div>
-
+       <div className="form-group">
+        <label>last name</label>
+       <input
+            name="lastname"
+            type="text"
+            {...register('lastname')}
+            className={`form-control ${errors.lastname ? 'is-invalid' : ''}`}
+          />
+         <div className="invalid-feedback">{errors.lastname?.message}</div>
+        </div>
        <div className="form-group">
          <label>Username</label>
          <input

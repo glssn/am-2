@@ -1,5 +1,8 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import { getFirestore } from "firebase/firestore"
+
+require('dotenv').config();
 
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,5 +13,7 @@ const app = firebase.initializeApp({
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 })
 
-export const auth = app.auth()
+export const auth = app.auth();
+export const db = app.firestore();
+// export const db = getFirestore();
 export default app;

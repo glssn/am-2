@@ -94,7 +94,7 @@ class Users extends React.Component {
     <Row className="justify-content-md-center">
     <Col xs lg="3" />
     <Col md="6">
-      <UserForm />
+      {/* <UserForm /> */}
       </Col>
       <Col xs lg="3" />
     </Row>

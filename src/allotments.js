@@ -16,18 +16,12 @@ class Allotments extends React.Component {
 
       return(
         <>
-          <Row>
-          <Col xs>
-          <Button type="primary">Primary Button</Button>
-          </Col>
-          </Row>
-          <Row>
           <Col xs />
           <Col xs>
             <ResponsiveTable/>
           </Col>
           <Col xs />
-          </Row>
+          
         </>
     )
     }

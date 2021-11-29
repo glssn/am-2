@@ -30,7 +30,12 @@ export default function Profile() {
       <Card.Body>
         <h2>Profile</h2>
         {error && <Alert variant="danger">{error}</Alert>}
+        {console.log(currentUser)}
+        <div>
         <strong>Email:</strong> {currentUser.email}
+        </div><div>
+        <strong>User ID</strong> {currentUser.uid}
+        </div>
         <Link to="/update-profile" className="btn btn-primary w-100 mt-3"><FaUserEdit /> Update profile</Link>
       </Card.Body>
       </Card>

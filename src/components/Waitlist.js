@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 // import { BTable } from 'react-bootstrap';
 import BTable from 'react-bootstrap/Table'
 // import { useAuth } from '../contexts/AuthContext'
-import { Link } from 'react-router-dom'
-import instance from '../axios.setup';
+import {  } from 'react-router-dom'
+// import instance from '../axios.setup';
 import {useTable} from 'react-table';
-import { DateTime, Duration } from 'luxon';
+import { DateTime } from 'luxon';
 import Humanizer from 'humanize-duration-es6';
 import en from '../locale/en'
 
@@ -51,14 +51,14 @@ export default function Waitlist() {
    ],
    []
  )
- const tableInstance = useTable({ columns, data })
- const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = tableInstance
+ // const tableInstance = useTable({ columns, data })
+ // const {
+ //    getTableProps,
+ //    getTableBodyProps,
+ //    headerGroups,
+ //    rows,
+ //    prepareRow,
+ //  } = tableInstance
 
   async function Table({ columns, data }) {
     // Use the state and functions returned from useTable to build your UI

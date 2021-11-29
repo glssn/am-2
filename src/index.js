@@ -5,9 +5,12 @@ import './index.css';
 import App from './App';
 import Header from './Header';
 import Allotments from './allotments';
+import Allotment from './allotment';
 import Users from './Users'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import Inspections from './components/Inspections'
+import Inspection from './components/Inspection'
 import { AuthProvider } from './contexts/AuthContext'
 import PrivateRoute from './components/PrivateRoute'
 import Profile from './components/Profile'
@@ -28,10 +31,13 @@ ReactDOM.render(
           <Switch>
             <PrivateRoute exact path="/" component={App} />
             <Route path="/allotments" component={Allotments} />
+            <Route exact path="/allotment/:id" component={Allotment} />
             <Route path="/users" component={Users} />
             <Route path="/waitlist" component={Waitlist} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            <PrivateRoute path="/inspections" component={Inspections} />
+            <PrivateRoute exact path="/inspections/:id" component={Inspection} />
             <PrivateRoute path="/profile" component={Profile} />
             <Route component={App} />
           </Switch>

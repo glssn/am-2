@@ -6,6 +6,8 @@ import {
   Card
 } from "react-bootstrap"
 import instance from './axios.setup';
+import {auth, db} from './firebase';
+// import  { collection, getDocs } from 'firebase/firestore';
 // import ModalForm from "./ModalForm"
 
 class App extends Component {
@@ -19,6 +21,21 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log("getting users snapshot")
+      var first = db.collection("users")
+                  // .doc(auth.currentUser.uid)
+                  .limit(25)
+      // first.get().then((querySnapshot) => {
+      //   querySnapshot.forEach((doc) => {
+      //     if (doc.exists) {
+      //         console.log("Document data:", doc.data());
+      //     } else {
+      //         // doc.data() will be undefined in this case
+      //         console.log("No such document!");
+      //     }
+      // })}).catch((error) => {
+      //     console.log("Error getting document:", error);
+      // });                  
       instance({
         url: '/users',
         method: 'get'
@@ -61,28 +78,7 @@ class App extends Component {
             <div className="w-100" style={{
               maxWidth: "22em"
             }}>
-            <Card>
-            <h2>users in system:</h2>
-            
-            <ListGroup variant="flush">
-              {this.state.users.map(name => {
-                return <ListGroup.Item>{name}</ListGroup.Item>
-              })}
-            </ListGroup>
-          </Card>
-          </div>
-            </Container>
-            <Container className="d-flex align-items-center justify-content-center">
-              <div className="w-100" style={{
-                  maxWidth:"22em"
-                }}>
-                <Card>
-            <h2>Current emails registered</h2>
-
-            {this.state.emails.map(email => {
-              return <li>{email}</li>
-            })}
-            </Card>
+              homepage content
           </div>
             </Container>
       </div>
